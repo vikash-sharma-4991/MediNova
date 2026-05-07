@@ -6,11 +6,26 @@ const MyAppointments = () => {
   const {doctors} = useContext(AppContext)
   return (
     <div>
-      <p>My Appointment</p>
+      <p className='pb-2 mt-12 font-medium text-zinc-700 border-b'>My Appointment</p>
       <div>
-        {doctors.slice(0,2).map((item,index) => (
-          <div key={index}>
-            <img src={item.image} alt="" />
+        {doctors.slice(0,5).map((item,index) => (
+          <div className='grid gri-cols-[1fr_2fr] gap-4 sm:flex sm:gap-6 py-2 border-b' key={index}>
+            <div>
+            <img className='w-32 bg-indigo-50' src={item.image} alt="" />
+            </div>
+            <div className='flex-1 text-sm text-zinc-600'>
+              <p className='text-neutral-800 font-semibold'>{item.name}</p>
+              <p>{item.speciality}</p>
+              <p className='text-zinc-700 font-medium mt-1'>Address:</p>
+              <p className='text-xs'>{item.address.line1}</p>
+              <p className='text-xs'>{item.address.line2}</p>
+              <p className='text-xs mt-1'><span className='text-sm text-neutral-700 font-medium'>Date & Time:</span>02, May, 2026 | 11:42 AM</p>
+            </div>
+            <div></div>
+            <div className='flex flex-col gap-2 justify-end'>
+              <button className='text-sm text-stone-500 border text-center sm:min-w-48 rounded py-2 hover:bg-blue-500 hover:text-white transition-all duration-500'>Pay Online</button>
+              <button className='text-sm text-stone-500 border text-center sm:min-w-48 rounded py-2 hover:bg-red-500 hover:text-white transition-all duration-500'>Cancel</button>
+            </div>
           </div>
         ))}
       </div>
