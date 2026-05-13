@@ -22,7 +22,7 @@ const Login = () => {
     if (state === 'Admin') {
 
       const { data } = await axios.post(
-        backendUrl + 'api/admin/login',
+        backendUrl + '/api/admin/login',
         { email, password }
       )
 
