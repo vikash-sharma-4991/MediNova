@@ -31,10 +31,19 @@ const AppContextProvider = (props) => {
     }
 
 
+    
+
+
 
      const value = {
         doctors,currencySymbol,token,setToken, backendUrl
     }
+
+
+
+
+   
+
 
 
     useEffect(() => {
