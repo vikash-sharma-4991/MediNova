@@ -51,7 +51,7 @@ const Dashboard = () => {
                 <img className="rounded-full w-18" src={item.docData.image} alt="" />
                 <div className="flex-1 text-sm">
                   <p className="text-gray-800 font-medium">{item.docData.name}</p>
-                  <p className="text-gray-800">{slotDateFormat(item.slotData)}</p>
+                  <p className="text-gray-800">{slotDateFormat(item.slotDate)}</p>
                 </div>
                  {
               item.cancelled ? <p className="text-red-400 text-xs font-medium">Cancelled</p> :             <img onClick={()=>cancelAppointment(item._id)} className=" w-10 cursor-pointer" src={assets.cancel_icon} alt="" />
